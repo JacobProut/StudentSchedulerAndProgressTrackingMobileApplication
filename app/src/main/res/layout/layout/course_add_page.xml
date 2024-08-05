@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/course_add_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="1sp"
+        android:layout_marginTop="1sp"
+        android:layout_marginEnd="1sp"
+        android:layout_marginBottom="1sp"
+        android:background="@color/lightGreyBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:text="@string/course_add_label_title"
+                    android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/course_add_page_course_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:text="@string/course_add_label_startDate"
+                    android:textStyle="bold"/>
+                <CalendarView
+                    android:id="@+id/course_add_page_course_startDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:text="@string/course_add_label_endDate"
+                    android:textStyle="bold"/>
+                <CalendarView
+                    android:id="@+id/course_add_page_course_endDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:text="@string/course_add_label_status"
+                    android:textStyle="bold"/>
+                <Spinner
+                    android:id="@+id/course_add_page_course_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:text="@string/course_add_label_instructor_name"
+                    android:textStyle="bold"/>
+                <EditText
+                    android:id="@+id/course_add_page_course_instructor_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:autofillHints="Enter Instructors name"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:text="@string/course_add_label_instructor_number"
+                    android:textStyle="bold"/>
+                <EditText
+                    android:id="@+id/course_add_page_course_instructor_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:autofillHints="Enter Instructors number"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:text="@string/course_add_label_instructor_email"
+                    android:textStyle="bold"/>
+                <EditText
+                    android:id="@+id/course_add_page_course_instructor_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:autofillHints="Enter Instructors email"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/notifyStartDate"
+        android:title="@string/notifyCourseStart"/>
+
+    <item
+        android:id="@+id/notifyEndDate"
+        android:title="@string/notifyCourseEnd" />
+
+    <item
+        android:id="@+id/courseDelete"
+        android:title="@string/courseDelete"/>
+
+    <item
+        android:id="@+id/courseSave"
+        android:title="@string/courseSave"/>
+
+</menu>

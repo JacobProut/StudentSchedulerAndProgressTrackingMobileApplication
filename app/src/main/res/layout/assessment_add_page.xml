@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/course_add_page"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.AssessmentUI.AssessmentAddPage">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="1sp"
+        android:layout_marginTop="1sp"
+        android:layout_marginEnd="1sp"
+        android:layout_marginBottom="1sp"
+        android:background="@color/lightGreyBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:text="@string/assessment_add_title"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/assessment_add_page_assessment_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:hint="@string/assessment_add_title_hint"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:textSize="20sp"
+                    android:text="@string/assessment_add_startDate"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/assessment_add_page_assessment_startDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:hint="@string/course_add_date_hint"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    android:background="@drawable/textview_border"
+                    android:layout_gravity="center"
+                    android:padding="10sp"
+                    tools:visibility="visible"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:textSize="20sp"
+                    android:text="@string/assessment_add_endDate"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/assessment_add_page_assessment_endDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:hint="@string/course_add_date_hint"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    android:background="@drawable/textview_border"
+                    android:layout_gravity="center"
+                    android:padding="10sp"
+                    tools:visibility="visible"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:text="@string/assessment_add_type_of_assessment"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/assessment_add_page_assessment_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:hint="@string/assessment_add_type_of_assessment_hint"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,112 @@
+<resources>
+    <!--Main Page-->
+    <string name="app_name">Student Scheduler</string>
+    <string name="studentCourseApplicationText">Select an option:</string>
+    <string name="termList">Term(s) Overview</string>
+    <string name="courseList">Course(s) Overview</string>
+    <string name="assessmentList">Assessment(s) Overview</string>
+
+    <!--menu_main_activity-->
+    <string name="add_sample_code">Add Sample Code</string>
+
+    <!--Misc-->
+    <string name="createButton">Create</string>
+
+
+    <!--Terms Page-->
+    <string name="termsMainPageText">Terms Page</string>
+    <string name="terms_add_floating_button">Terms Add Floating Button</string>
+    <string name="list_of_term_text">List of Terms:</string>
+
+    <!--Terms Add Page-->
+    <string name="terms_label">Add a Term</string>
+    <string name="terms_add_label_title">Term Title:</string>
+    <string name="terms_add_label_title_hint">Terms Title?</string>
+    <string name="terms_add_label_startDate">Term Start Date:</string>
+    <string name="terms_add_label_endDate">Terms End Date:</string>
+    <string name="term_add_course">Un-Associated Courses:</string>
+    <string name="term_associated_course">Associated Courses for this Term:</string>
+    <string name="term_coursed_to_be_added">Courses that will be added:</string>
+    <string name="repeat_course_will_be_discarded">Courses in here that are already in Associated Courses/Duplicates in here Will be DISCARDED!</string>
+    <string name="click_to_add_course">Click here to Add Courses</string>
+    <string name="click_to_remove_course">Click here to Remove Courses</string>
+
+    <!--Terms Add Page Menu-->
+    <string name="notifyTermStart">Notify Term Start Date</string>
+    <string name="notifyTermEnd">Notify Term End Date</string>
+    <string name="termSave">Save Term</string>
+    <string name="termDelete">Delete Term</string>
+
+
+    <!--Course Page-->
+    <string name="course_add_floating_button">Course Add Floating Button</string>
+    <string name="list_of_course_text">List of Courses:</string>
+
+    <!--Course Add Page-->
+    <string name="course_add_overview_page">Add a Course</string>
+    <string name="course_add_label_title">Course Title:</string>
+    <string name="course_add_label_title_hint">Title?</string>
+    <string name="course_add_label_startDate">Course Start Date:</string>
+    <string name="course_add_label_endDate">Course End Date:</string>
+    <string name="course_add_label_status">Course Status:</string>
+    <string name="course_add_label_instructor_name">Instructor\'s Name:</string>
+    <string name="course_add_label_instructor_name_hint">Instructor\'s Name?</string>
+    <string name="course_add_label_instructor_number">Instructor\'s Number:</string>
+    <string name="course_add_label_instructor_number_hint">Instructor\'s Number?</string>
+    <string name="course_add_label_instructor_email">Instructor\'s Email:</string>
+    <string name="course_add_label_instructor_email_hint">Instructor\'s Email?</string>
+    <string name="course_add_date_hint">Click here to Select a Date</string>
+    <string name="course_add_assessment">Un-Associated Assessments:</string>
+    <string name="course_associated_assessments">Associated Assessments for this Course:</string>
+    <string name="course_assessments_to_be_added">Assessments that will be added:</string>
+    <string name="repeat_assessments_will_be_discarded">Assessments in here that are already in Associated Assessments/Duplicates in here Will be DISCARDED!</string>
+
+
+
+    <!--Course Add Page Menu-->
+    <string name="notifyCourseStart">Notify Course Start Date</string>
+    <string name="notifyCourseEnd">Notify Course End Date</string>
+    <string name="courseSave">Save Course</string>
+    <string name="courseDelete">Delete Course</string>
+    <string name="click_to_add_assessments">Click here to Add Assessments</string>
+
+    <!--Course Add ComboBox-->
+    <string-array name="status_ComboBox_aka_spinner">
+        <item>In-Progress</item>
+        <item>Completed</item>
+        <item>Dropped</item>
+        <item>Plan to Take</item>
+    </string-array>
+
+    <!--Assessment Page-->
+    <string name="assessment_add_floating_button">Assessment Add Floating Button</string>
+    <string name="list_of_assessment_text">List of Assessments:</string>
+
+    <!--Assessment Add page-->
+    <string name="assessment_label">Add an Assessment</string>
+    <string name="assessment_add_title">Assessment Title:</string>
+    <string name="assessment_add_title_hint">Assessment Title?</string>
+    <string name="assessment_add_startDate">Start date of Exam:</string>
+    <string name="assessment_add_endDate">End date of Exam:</string>
+    <string name="assessment_add_type_of_assessment">Type of Assessment:</string>
+    <string name="assessment_add_type_of_assessment_hint">Assessment Type?</string>
+
+    <!--Assessment Add Page Menu-->
+    <string name="notifyAssessmentStart">Notify Assessment Start Date</string>
+    <string name="notifyAssessmentEnd">Notify Assessment End Date</string>
+    <string name="assessmentSave">Save Assessment</string>
+    <string name="assessmentDelete">Delete Assessment</string>
+
+    <!--Assessment Add ComboBox-->
+    <string-array name="spinner_OA_or_PA">
+        <item>Objective Assessment</item>
+        <item>Performance Assessment</item>
+    </string-array>
+
+    <!--AndroidManifest Page-->
+    <string name="main_page_overview">Student Scheduler/Progress Tracking</string>
+    <string name="terms_overview_page">Overview of Terms</string>
+    <string name="course_overview_page">Overview of Courses</string>
+    <string name="assessment_overview_page">Overview of Assessments</string>
+
+</resources>

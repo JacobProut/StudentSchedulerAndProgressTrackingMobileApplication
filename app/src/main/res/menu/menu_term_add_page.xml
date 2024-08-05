@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/notifyTermStartDate"
+        android:title="@string/notifyTermStart"/>
+
+    <item
+        android:id="@+id/notifyTermEndDate"
+        android:title="@string/notifyTermEnd" />
+
+    <item
+        android:id="@+id/termDelete"
+        android:title="@string/termDelete"/>
+
+    <item
+        android:id="@+id/termSave"
+        android:title="@string/termSave"/>
+
+</menu>
