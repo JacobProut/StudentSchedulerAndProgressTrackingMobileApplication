@@ -71,7 +71,6 @@ public class CourseAddPage extends AppCompatActivity {
 
     private List<Assessment> allAssessments;
     private List<Assessment> associatedAssessments;
-    private List<Assessment> assessmentsNotInCourse;
     private List<Assessment> assessmentList;
     private List<Assessment> selectedAssessments;
 
@@ -164,9 +163,7 @@ public class CourseAddPage extends AppCompatActivity {
         editInstructEmail.setText(instructEmail);
 
         repository = new Repository(getApplication());
-
         associatedAssessments = repository.getmAssociatedAssessmentsForCourse(courseId);
-        allAssessments = repository.getmAllAssessments();
 
         CoursePageAssessmentRecyclerViewAdapter displayAdapter = new CoursePageAssessmentRecyclerViewAdapter(this, associatedAssessments);
         RecyclerView associatedRecyclerView = findViewById(R.id.course_add_page_associated_assessments_recyclerView);
@@ -181,7 +178,6 @@ public class CourseAddPage extends AppCompatActivity {
 
         fetchAssessments();
         fetchAssociatedAssessments();
-        //getAssessmentsNotInCourse();
         Button showDialogButton = findViewById(R.id.button_add_assessments);
         showDialogButton.setOnClickListener(v -> showMultiSelectDialog());
 
