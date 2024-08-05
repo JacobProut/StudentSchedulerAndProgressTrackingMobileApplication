@@ -293,20 +293,24 @@ public class TermsAddPage extends AppCompatActivity {
             return true;
         }
         if (item.getItemId() == R.id.termDelete) {
+            boolean termFound = false;
             for (Term term : repository.getmAllTerms()) {
                 if (term.getTermId() == termId) {
                     currentTerm = term;
+                    termFound = true;
                     break;
                 }
-                if (currentTerm != null) {
-                    if (repository.getmAllAssociatedCourses(termId).isEmpty()) {
-                        Toast.makeText(TermsAddPage.this, currentTerm.getTermTitle() + " was deleted", Toast.LENGTH_LONG).show();
-                        repository.delete(currentTerm);
-                        TermsAddPage.this.finish();
-                    } else {
-                        Toast.makeText(TermsAddPage.this, "Term cannot be deleted while having courses assigned to it", Toast.LENGTH_LONG).show();
-                    }
+            }
+            if (termFound) {
+                if (repository.getmAllAssociatedCourses(termId).isEmpty()) {
+                    Toast.makeText(TermsAddPage.this, currentTerm.getTermTitle() + " was deleted", Toast.LENGTH_LONG).show();
+                    repository.delete(currentTerm);
+                    TermsAddPage.this.finish();
+                } else {
+                    Toast.makeText(TermsAddPage.this, "Term cannot be deleted while having courses assigned to it", Toast.LENGTH_LONG).show();
                 }
+            } else {
+                Toast.makeText(TermsAddPage.this, "Term not found", Toast.LENGTH_LONG).show();
             }
         }
         if (item.getItemId() == R.id.termSave) {
