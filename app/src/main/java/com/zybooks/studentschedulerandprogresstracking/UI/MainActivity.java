@@ -77,11 +77,6 @@ public class MainActivity extends AppCompatActivity {
             repository.insert(assessment);
             Assessment assessment2 = new Assessment(2, "Newtons Law PA", "09/20/24", "09/20/24", "Objective Assessment");
             repository.insert(assessment2);
-
-            //REMOVE BEFORE SUBMITTING PROJECT
-            Term term3 = new Term(3, "TEST", "08/01/24", "12/01/24");
-            repository.insert(term3);
-
             return true;
         }
         return true;
