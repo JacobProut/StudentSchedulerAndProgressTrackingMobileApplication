@@ -17,7 +17,7 @@ import com.zybooks.studentschedulerandprogresstracking.Entities.CourseAssessment
 import com.zybooks.studentschedulerandprogresstracking.Entities.Term;
 import com.zybooks.studentschedulerandprogresstracking.Entities.TermCourse;
 
-@Database(entities = {Course.class, Term.class, Assessment.class, TermCourse.class, CourseAssessment.class}, version = 33, exportSchema = false)
+@Database(entities = {Course.class, Term.class, Assessment.class, TermCourse.class, CourseAssessment.class}, version = 40, exportSchema = false)
 public abstract class CourseDatabaseBuilder extends RoomDatabase {
     public abstract CourseDAO courseDAO();
 

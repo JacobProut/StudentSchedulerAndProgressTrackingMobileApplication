@@ -65,9 +65,9 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.addSample) {
             repository = new Repository(getApplication());
-            Course course = new Course(1, "Ethics", "08/01/24", "09/01/24", "Plan to Take", "Stacy Sue", 1234567890, "StacySue@mail.com");
+            Course course = new Course(1, "Ethics", "08/01/24", "09/01/24", "Plan to Take", "Stacy Sue", 1234567890, "StacySue@mail.com", "Ethics is Fun... Said no one!");
             repository.insert(course);
-            course = new Course(2, "Physics", "08/01/24", "10/01/24", "Dropped", "Albert Newman", 1987654321, "AlbertTheGuy@mail.com");
+            course = new Course(2, "Physics", "08/01/24", "10/01/24", "Dropped", "Albert Newman", 1987654321, "AlbertTheGuy@mail.com", "Science Rules");
             repository.insert(course);
             Term term = new Term(1, "Winter Term", "08/01/24", "12/01/24");
             repository.insert(term);

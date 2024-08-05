@@ -177,6 +177,25 @@
                     android:hint="@string/course_add_label_instructor_email_hint" />
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:text="@string/course_optional_note_text"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/course_add_page_optional_note"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50sp"
+                    android:hint="@string/course_add_label_optional_note" />
+            </LinearLayout>
+
             <Button
                 android:id="@+id/button_add_assessments"
                 android:layout_width="400sp"

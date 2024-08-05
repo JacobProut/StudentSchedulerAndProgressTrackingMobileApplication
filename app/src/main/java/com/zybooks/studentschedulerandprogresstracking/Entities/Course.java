@@ -13,6 +13,8 @@ public class Course {
     //Foreign Key
     public int termId;
 
+    public String note;
+
     private String title;
     private String startDate;
     private String endDate;
@@ -21,7 +23,7 @@ public class Course {
     private int instructNumber;
     private String instructEmail;
 
-    public Course(int courseId, String title, String startDate, String endDate, String status, String instructName, int instructNumber, String instructEmail) {
+    public Course(int courseId, String title, String startDate, String endDate, String status, String instructName, int instructNumber, String instructEmail, String note) {
         this.courseId = courseId;
         this.title = title;
         this.startDate = startDate;
@@ -30,6 +32,7 @@ public class Course {
         this.instructName = instructName;
         this.instructNumber = instructNumber;
         this.instructEmail = instructEmail;
+        this.note = note;
     }
 
     public int getCourseId() {
@@ -104,4 +107,11 @@ public class Course {
         this.instructEmail = instructEmail;
     }
 
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
 }

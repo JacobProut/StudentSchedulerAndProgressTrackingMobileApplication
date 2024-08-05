@@ -63,6 +63,9 @@ public class CourseAddPage extends AppCompatActivity {
     String instructEmail;
     EditText editInstructEmail;
 
+    String note;
+    EditText optionalNote;
+
     Course currentCourse;
 
 
@@ -181,6 +184,10 @@ public class CourseAddPage extends AppCompatActivity {
         //getAssessmentsNotInCourse();
         Button showDialogButton = findViewById(R.id.button_add_assessments);
         showDialogButton.setOnClickListener(v -> showMultiSelectDialog());
+
+        optionalNote = findViewById(R.id.course_add_page_optional_note);
+        note = getIntent().getStringExtra("note");
+        optionalNote.setText(note);
     }
 
 
@@ -276,6 +283,17 @@ public class CourseAddPage extends AppCompatActivity {
             Toast.makeText(this, "Returning to Course Overview", Toast.LENGTH_SHORT).show();
             return true;
         }
+        if (item.getItemId() == R.id.share) {
+            Intent sentIntent = new Intent();
+            sentIntent.setAction(Intent.ACTION_SEND);
+            sentIntent.putExtra(Intent.EXTRA_TEXT, optionalNote.getText().toString());
+            sentIntent.putExtra(Intent.EXTRA_TITLE, "Student Scheduler Course Note");
+            sentIntent.setType("text/plain");
+            Intent shareIntent = Intent.createChooser(sentIntent, null);
+            startActivity(shareIntent);
+            return true;
+
+        }
         if (item.getItemId() == R.id.notifyEndDate) {
             String dateFromScreen = editEndDate.getText().toString();
             String myFormat = "MM/dd/yy";
@@ -332,6 +350,7 @@ public class CourseAddPage extends AppCompatActivity {
             String instructNumberStr = editInstructNumber.getText().toString();
             String instructEmailStr = editInstructEmail.getText().toString();
             String status = editStatus.getSelectedItem().toString();
+            String optNote = optionalNote.getText().toString();
 
             if (titleStr.isEmpty() || instructNameStr.isEmpty() || instructNumberStr.isEmpty() || instructEmailStr.isEmpty()) {
                 Toast.makeText(CourseAddPage.this, "Please fill in all required fields.", Toast.LENGTH_LONG).show();
@@ -366,12 +385,12 @@ public class CourseAddPage extends AppCompatActivity {
                     if (repository.getmAllCourses().size() == 0) courseId = 1;
                     else
                         courseId = repository.getmAllCourses().get(repository.getmAllCourses().size() - 1).getCourseId() + 1;
-                    course = new Course(courseId, titleStr, startDateStr, endDateStr, status, instructNameStr, Integer.parseInt(instructNumberStr), instructEmailStr);
+                    course = new Course(courseId, titleStr, startDateStr, endDateStr, status, instructNameStr, Integer.parseInt(instructNumberStr), instructEmailStr, optNote);
                     repository.insert(course);
                     Toast.makeText(CourseAddPage.this, "Course has been added!", Toast.LENGTH_LONG).show();
 
                 } else {
-                    course = new Course(courseId, titleStr, startDateStr, endDateStr, status, instructNameStr, Integer.parseInt(instructNumberStr), instructEmailStr);
+                    course = new Course(courseId, titleStr, startDateStr, endDateStr, status, instructNameStr, Integer.parseInt(instructNumberStr), instructEmailStr, optNote);
                     repository.update(course);
                     Toast.makeText(CourseAddPage.this, "Course has been updated!", Toast.LENGTH_LONG).show();
                 }
