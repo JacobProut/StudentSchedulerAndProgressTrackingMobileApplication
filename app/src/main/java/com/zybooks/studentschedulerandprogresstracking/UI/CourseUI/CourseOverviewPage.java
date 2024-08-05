@@ -67,6 +67,4 @@ public class CourseOverviewPage extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         courseAdapter.setCourse(allCourses);
     }
-
-
 }

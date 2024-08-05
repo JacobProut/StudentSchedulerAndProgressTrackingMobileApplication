@@ -214,16 +214,12 @@ public class Repository {
         new Thread(() -> mTermCourseDAO.delete(termCourse)).start();
     }
 
-    // Remove all courses associated with a term
     public void removeAllCoursesFromTerm(int termId) {
         new Thread(() -> mTermCourseDAO.deleteCoursesForTerm(termId)).start();
     }
 
-    // Get all courses associated with a term
     public List<Term> getTermsForCourse(int courseId) {
         List<Term> terms = new ArrayList<>();
-
-        // Run database operations in a separate thread
         new Thread(() -> {
             List<TermCourse> termCourses = mTermCourseDAO.getTermsForCourse(courseId);
 
@@ -233,23 +229,16 @@ public class Repository {
                     terms.add(term);
                 }
             }
-
-            // Handle the terms list as needed, e.g., update UI
-            // runOnUiThread(() -> {  Update UI  });
-
         }).start();
-
-        return terms; // Note: This will return before the asynchronous operation completes
+        return terms;
     }
 
     public List<Course> getCoursesInTerm(int termId) {
         return mCourseDAO.getCoursesInTerm(termId);
     }
 
-
     public void addCourseToTerm(int termId, int courseId) {
         new Thread(() -> {
-            // Check if the TermCourse relationship already exists
             TermCourse existingTermCourse = mTermCourseDAO.getTermCourse(termId, courseId);
             if (existingTermCourse == null) {
                 TermCourse termCourse = new TermCourse(termId, courseId);
@@ -271,15 +260,12 @@ public class Repository {
         new Thread(() -> mCourseAssessmentDAO.delete(courseAssessment)).start();
     }
 
-    // Remove all courses associated with a term
     public void removeAllAssessmentsFromCourse(int courseId) {
         new Thread(() -> mCourseAssessmentDAO.deleteAssessmentsForCourse(courseId)).start();
     }
 
     public List<Course> getCourseForAssessments(int assessmentId) {
         List<Course> courses = new ArrayList<>();
-
-        // Run database operations in a separate thread
         new Thread(() -> {
             List<CourseAssessment> courseAssessments = mCourseAssessmentDAO.getAssessmentsForCourse(assessmentId);
             for (CourseAssessment courseAssessment : courseAssessments) {
@@ -289,7 +275,7 @@ public class Repository {
                 }
             }
         }).start();
-        return courses; // Note: This will return before the asynchronous operation completes
+        return courses;
     }
 
     public List<Assessment> getAssessmentsInCourse(int courseId) {
@@ -310,6 +296,4 @@ public class Repository {
     public List<Assessment> getAssessmentForCourse(int courseId) {
         return mAssessmentDAO.getAssessmentsInCourse(courseId);
     }
-
-
 }

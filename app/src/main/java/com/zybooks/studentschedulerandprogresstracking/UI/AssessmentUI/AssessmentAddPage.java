@@ -47,7 +47,6 @@ public class AssessmentAddPage extends AppCompatActivity {
 
     Assessment currentAssessment;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +54,6 @@ public class AssessmentAddPage extends AppCompatActivity {
 
         assessmentId = getIntent().getIntExtra("id", -1);
         courseId = getIntent().getIntExtra("courseId", 0);
-
 
         String myFormat = "MM/dd/yy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
@@ -85,7 +83,6 @@ public class AssessmentAddPage extends AppCompatActivity {
         };
         sstartDate = getIntent().getStringExtra("startDate");
         editAssessStartDate.setText(sstartDate);
-
 
         editAssessEndDate = findViewById(R.id.assessment_add_page_assessment_endDate);
         editAssessEndDate.setOnClickListener(v -> {
@@ -126,14 +123,12 @@ public class AssessmentAddPage extends AppCompatActivity {
     public void updateLabelStart() {
         String myFormat = "MM/dd/yy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-
         editAssessStartDate.setText(sdf.format(myCalenderStartDate.getTime()));
     }
 
     public void updateLabelEnd() {
         String myFormat = "MM/dd/yy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-
         editAssessEndDate.setText(sdf.format(myCalenderEndDate.getTime()));
     }
 

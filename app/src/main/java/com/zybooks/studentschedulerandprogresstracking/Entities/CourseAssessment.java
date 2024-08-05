@@ -9,8 +9,6 @@ import androidx.room.PrimaryKey;
         private int courseId;
         private int assessmentId;
 
-        // Constructors, getters, and setters
-
         public CourseAssessment(int courseId, int assessmentId) {
             this.courseId = courseId;
             this.assessmentId = assessmentId;
@@ -35,6 +33,7 @@ import androidx.room.PrimaryKey;
         public int getAssessmentId() {
             return assessmentId;
         }
+
         public void setAssessmentId(int assessmentId) {
             this.assessmentId = assessmentId;
         }

@@ -52,18 +52,14 @@ public class TermsAddPage extends AppCompatActivity {
     DatePickerDialog.OnDateSetListener endDate;
     final Calendar myCalenderEndDate = Calendar.getInstance();
 
-    Term currentTerm;
-
-
     private List<Course> allCourses;
     private List<Course> associatedCourses;
     private List<Course> coursesNotInTerm;
     private List<Course> courseList;
     private List<Course> selectedCourses;
-
-
     private List<Course> coursesToBeAdded;
 
+    Term currentTerm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -178,7 +174,6 @@ public class TermsAddPage extends AppCompatActivity {
 
         TermPageCourseMultiSelectAdapter coursesToBeAddedAdapter = new TermPageCourseMultiSelectAdapter(this, coursesToBeAdded, false);
 
-
         builder.setPositiveButton("Add Courses", (dialog, which) -> {
             selectedCourses = adapter.getSelectedCourses();
             coursesToBeAdded.addAll(selectedCourses);
@@ -194,7 +189,7 @@ public class TermsAddPage extends AppCompatActivity {
         });
 
         builder.setNegativeButton("Cancel", (dialog, which) -> {
-            dialog.dismiss(); // Dismiss dialog if cancel is pressed
+            dialog.dismiss();
         });
 
         AlertDialog dialog = builder.create();
@@ -216,7 +211,6 @@ public class TermsAddPage extends AppCompatActivity {
         new Thread(() -> {
             associatedCourses = repository.getCoursesForTerm(termId); // Fetch courses for the current term
             runOnUiThread(() -> {
-                // Update the RecyclerView with the new list
                 TermPageCourseRecyclerViewAdapter displayAdapter = new TermPageCourseRecyclerViewAdapter(this, associatedCourses);
                 RecyclerView associatedRecyclerView = findViewById(R.id.term_add_page_associated_courses_recyclerView);
                 associatedRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -245,14 +239,12 @@ public class TermsAddPage extends AppCompatActivity {
     public void updateLabelStart() {
         String myFormat = "MM/dd/yy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-
         editTermStartDate.setText(sdf.format(myCalenderStartDate.getTime()));
     }
 
     public void updateLabelEnd() {
         String myFormat = "MM/dd/yy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-
         editTermEndDate.setText(sdf.format(myCalenderEndDate.getTime()));
     }
 
@@ -363,7 +355,6 @@ public class TermsAddPage extends AppCompatActivity {
                         Toast.makeText(TermsAddPage.this, "Term has been updated!", Toast.LENGTH_LONG).show();
                     }
 
-                    // Update course associations
                     if (selectedCourses != null && !selectedCourses.isEmpty()) {
                         for (Course course : selectedCourses) {
                             if (!associatedCourses.contains(course)) {
@@ -378,9 +369,9 @@ public class TermsAddPage extends AppCompatActivity {
                     Toast.makeText(TermsAddPage.this, "Start date or end date is null.", Toast.LENGTH_LONG).show();
                 }
                 return true;
-            }
-            return super.onOptionsItemSelected(item);
         }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

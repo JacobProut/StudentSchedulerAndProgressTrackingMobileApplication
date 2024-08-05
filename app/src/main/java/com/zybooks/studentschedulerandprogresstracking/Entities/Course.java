@@ -7,7 +7,6 @@ import androidx.room.PrimaryKey;
 
 public class Course {
     @PrimaryKey(autoGenerate = true)
-    //idk if its supposed to be public or private
     public int courseId;
 
     //Foreign Key

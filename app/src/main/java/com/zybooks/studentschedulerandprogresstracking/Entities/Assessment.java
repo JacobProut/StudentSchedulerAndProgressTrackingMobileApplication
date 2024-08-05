@@ -6,7 +6,6 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "assessments")
 public class Assessment {
     @PrimaryKey(autoGenerate = true)
-    //idk if its supposed to be public or private
     public int assessmentId;
 
     //Foreign Key
@@ -15,9 +14,7 @@ public class Assessment {
     private String assessmentTitle;
     private String endDate;
     private String startDate;
-
     private String spinnerOAorPA;
-
 
     public Assessment(int assessmentId, String assessmentTitle, String startDate, String endDate, String spinnerOAorPA) {
         this.assessmentId = assessmentId;
@@ -70,6 +67,7 @@ public class Assessment {
     public String getSpinnerOAorPA() {
         return spinnerOAorPA;
     }
+
     public void setSpinnerOAorPA(String spinnerOAorPA) {
         this.spinnerOAorPA = spinnerOAorPA;
     }

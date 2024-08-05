@@ -34,7 +34,7 @@ public class TermsOverviewPage extends AppCompatActivity {
             startActivity(add);
         });
 
-        TextView txt = (TextView) findViewById(R.id.term_overview_list_text);
+        TextView txt = findViewById(R.id.term_overview_list_text);
         txt.setPaintFlags(txt.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
         RecyclerView recyclerView = findViewById(R.id.terms_overview_recyclerView);

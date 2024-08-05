@@ -47,7 +47,6 @@ public class CoursePageAssessmentMultiSelectAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            // Inflate the correct layout based on showCheckbox flag
             convertView = LayoutInflater.from(context).inflate(
                     checkBoxVisibility ? R.layout.course_assessment_add_checkboxlayout : R.layout.course_assessment_add_display_unassociatedassessments_layout, parent, false);
             holder = new CoursePageAssessmentMultiSelectAdapter.ViewHolder(convertView);
@@ -56,11 +55,9 @@ public class CoursePageAssessmentMultiSelectAdapter extends BaseAdapter {
             holder = (CoursePageAssessmentMultiSelectAdapter.ViewHolder) convertView.getTag();
         }
 
-        // Bind data
         Assessment assessment = assessmentList.get(position);
         holder.assessmentTitle.setText(assessment.getAssessmentTitle());
 
-        // Control checkbox visibility based on showCheckbox flag
         if (checkBoxVisibility) {
             if (holder.assessmentCheckbox != null) {
                 holder.assessmentCheckbox.setVisibility(View.VISIBLE);

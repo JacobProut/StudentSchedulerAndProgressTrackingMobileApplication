@@ -10,8 +10,6 @@ public class TermCourse {
     private int termId;
     private int courseId;
 
-    // Constructors, getters, and setters
-
     public TermCourse(int termId, int courseId) {
         this.termId = termId;
         this.courseId = courseId;

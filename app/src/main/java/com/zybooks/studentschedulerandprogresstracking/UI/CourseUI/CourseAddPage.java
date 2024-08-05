@@ -68,13 +68,9 @@ public class CourseAddPage extends AppCompatActivity {
 
     Course currentCourse;
 
-
-    private List<Assessment> allAssessments;
     private List<Assessment> associatedAssessments;
     private List<Assessment> assessmentList;
     private List<Assessment> selectedAssessments;
-
-
     private List<Assessment> assessmentsToBeAdded;
 
     @Override
@@ -204,7 +200,6 @@ public class CourseAddPage extends AppCompatActivity {
 
         CoursePageAssessmentMultiSelectAdapter assessmentsToBeAddedAdapter = new CoursePageAssessmentMultiSelectAdapter(this, assessmentsToBeAdded, false);
 
-
         builder.setPositiveButton("Add Assessments", (dialog, which) -> {
             selectedAssessments = adapter.getSelectedAssessments();
             assessmentsToBeAdded.addAll(selectedAssessments);
@@ -220,7 +215,7 @@ public class CourseAddPage extends AppCompatActivity {
         });
 
         builder.setNegativeButton("Cancel", (dialog, which) -> {
-            dialog.dismiss(); // Dismiss dialog if cancel is pressed
+            dialog.dismiss();
         });
 
         AlertDialog dialog = builder.create();
@@ -253,14 +248,12 @@ public class CourseAddPage extends AppCompatActivity {
     public void updateLabelStart() {
         String myFormat = "MM/dd/yy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-
         editStartDate.setText(sdf.format(myCalenderStartDate.getTime()));
     }
 
     public void updateLabelEnd() {
         String myFormat = "MM/dd/yy";
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
-
         editEndDate.setText(sdf.format(myCalenderEndDate.getTime()));
     }
 
@@ -288,7 +281,6 @@ public class CourseAddPage extends AppCompatActivity {
             Intent shareIntent = Intent.createChooser(sentIntent, null);
             startActivity(shareIntent);
             return true;
-
         }
         if (item.getItemId() == R.id.notifyEndDate) {
             String dateFromScreen = editEndDate.getText().toString();
