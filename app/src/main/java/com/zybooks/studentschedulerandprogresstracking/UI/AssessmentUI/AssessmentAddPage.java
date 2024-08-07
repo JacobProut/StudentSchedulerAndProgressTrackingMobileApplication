@@ -229,7 +229,7 @@ public class AssessmentAddPage extends AppCompatActivity {
 
                 Assessment assessment;
                 if (assessmentId == -1) {
-                    if (repository.getmAllCourses().size() == 0) assessmentId = 1;
+                    if (repository.getmAllAssessments().size() == 0) assessmentId = 1;
                     else
                         assessmentId = repository.getmAllAssessments().get(repository.getmAllAssessments().size() - 1).getAssessmentId() + 1;
                     assessment = new Assessment(assessmentId, titleStr, startDateStr, endDateStr, editTypeOfAssessment.getSelectedItem().toString());
@@ -249,3 +249,4 @@ public class AssessmentAddPage extends AppCompatActivity {
         return true;
     }
 }
+
